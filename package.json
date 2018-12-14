@@ -9,16 +9,21 @@
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "julian h.",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
     "mongoose": "^5.3.14",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "stripe": "^6.18.1"
   }
 }

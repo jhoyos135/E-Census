@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Landing extends Component {
   render() {
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div className="container">
 
           <h1>Landing</h1>
           

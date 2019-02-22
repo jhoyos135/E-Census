@@ -7,8 +7,8 @@ import Payments from './Payments';
 class Header extends Component {
 
     renderContent() {
-
         switch(this.props.auth) {
+            
             case null:
             return
             case false:

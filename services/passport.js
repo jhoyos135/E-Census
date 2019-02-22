@@ -20,6 +20,7 @@ passport.deserializeUser((id, done) => {
 
 });
 
+//google Oauth
 passport.use( new GoogleStrategy({ 
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
@@ -41,4 +42,4 @@ passport.use( new GoogleStrategy({
                done(null, user);
             }
          
- })); //google authentications, to make a facebook authentication you have change this piece of code only
+ })); //to make a facebook authentication you have change this piece of code only

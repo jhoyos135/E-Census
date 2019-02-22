@@ -24,6 +24,9 @@ class Header extends Component {
                 <li key="2" style={{margin: '0 10px'}}>
                     Credits: { this.props.auth.credits }
                 </li>,
+                <li key="5">
+                    <a href="/">Home</a>
+                </li>,    
                 <li key="3">
                     <a href="/surveys">Dashboard</a>
                 </li>,
@@ -38,8 +41,6 @@ class Header extends Component {
 
   render() {
 
-    
-
     return (
       <div>
 
@@ -49,7 +50,9 @@ class Header extends Component {
                   to={ this.props.auth ? '/surveys' : '/' } 
                   className="brand-logo left"
                   >
-                  Surveys
+                
+                  E-Census
+
                   </Link>
                   <ul className="right">
                       { this.renderContent() }

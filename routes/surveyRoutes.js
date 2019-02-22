@@ -17,6 +17,7 @@ module.exports = (app) => {
         res.send(surveys);
     });
 
+    // after voting yes or no, this will redirect you to the Thank you page.
     app.get('/api/surveys/:surveyId/:choice', (req, res) => {
         res.send('Thanks for voting!');
     });

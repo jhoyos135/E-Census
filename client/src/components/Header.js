@@ -44,14 +44,14 @@ class Header extends Component {
     return (
       <div className="navbar-fixed">
 
-          <nav className="indigo">
+          <nav>
               <div className="nav-wrapper container">
                   <Link 
                   to={ this.props.auth ? '/surveys' : '/' } 
                   className="brand-logo left"
                   >
                 
-                  E-Census
+                 <i className="material-icons custom_mail">mail</i>- Census
 
                   </Link>
                   <ul className="right">

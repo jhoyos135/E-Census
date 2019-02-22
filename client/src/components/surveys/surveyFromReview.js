@@ -26,7 +26,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
 
       <br />
       <button
-      className="indigo lighten-1 btn-flat white-text"
+      className="lighten-1 btn-flat white-text"
       onClick={onCancel}
       >
       Back

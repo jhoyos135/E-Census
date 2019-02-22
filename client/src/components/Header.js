@@ -42,7 +42,7 @@ class Header extends Component {
   render() {
 
     return (
-      <div>
+      <div className="navbar-fixed">
 
           <nav className="indigo">
               <div className="nav-wrapper container">

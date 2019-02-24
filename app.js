@@ -4,10 +4,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-require('./models/User'); //user first
+require('./models/User'); // user first
 require('./models/Survey');
-require('./services/passport'); //passport second
+require('./services/passport'); // passport second
 
+// Connects with the Mongo Database
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();

@@ -1,6 +1,5 @@
-/* .navbar-fixed {
-    margin-bottom: -64px !important;
-} */
+@import url('https://fonts.googleapis.com/css?family=Lato|Poppins');
+
 
 :root {
     --firstColor: #A63A50;
@@ -8,24 +7,31 @@
     --thirdColor: #8BAAAD;
     --whiteColor: #F4FFF8;
     --blackColor: #000F08;
-
+    --hFont: 'Poppins', sans-serif;
+    --pFont: 'Lato', sans-serif;
 }
 body {
     background: var(--whiteColor);
 }
+p {
+    font-family: var(--pFont);
+}
 nav {
     background: var(--firstColor);
     color: var(--whiteColor);
+    font-family: var(--pFont);
 }
 
 h1, h2 {
     color: var(--secondColor) !important;
+    font-family: var(--hFont) !important;
 }
 .custom_container h5 {
     color: var(--firstColor);
     font-weight: bold;
     margin-bottom: 30px;
     text-align: right;
+    font-family: var(--hFont) !important;
 }
 .custom_container p {
     text-align: justify;
@@ -39,19 +45,12 @@ h1, h2 {
     background: var(--firstColor);
     color: var(--whiteColor);
 }
+/**/
 .custom_container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: rgba(0,0,0,0.4);
-    margin-top: -64px !important;
-    padding-top: 64px;
-    
+    background-color: var(--secondColor);
+    padding-top: 40px;
 }
 .custom_container .column  {
-    width: 25%;
-    height: 100%;
-    float: left;
     border-right: 2px solid rgba(0,0,0,0.3);
     box-shadow: 1px 2px 8px rgba(0,0,0,0.6);
     box-sizing: border-box;
@@ -63,12 +62,8 @@ h1, h2 {
 }
 .custom_container .column .content {
     position: relative;
-    height: 100%;
 }
 .custom_container .column .content h1 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 100%;
     background: rgba(0,0,0,0.1);
     margin: 0;
@@ -88,22 +83,19 @@ h1, h2 {
     display: block;
 }
 .custom_container .column .content .box {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    position: absolute;
     top: 50%;
-    transform: translateY(100%);
     box-sizing: border-box;
     padding: 40px;
     background: var(--whiteColor);
     text-align: center;
     transition: 0.5s;
-    opacity: 0;
+    opacity: 1;
 }
 .custom_container .column.active .content .box {
     opacity: 1;
-    transform: translateY(-50%);
+    transform: translateY(-32%);
 
 }
 .custom_container .column .content .box h2 {
@@ -130,34 +122,140 @@ h1, h2 {
     pointer-events: none;
     z-index: -1;
 }
-.custom_container .column.active .bg.bg1 {
-    background: url(bg_1.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    transition: 0.5s;
+.custom_container .column.active {
+    height: 100%;
+    object-fit: cover;
 }
-.custom_container .column.active .bg.bg2 {
-    background: url(bg_2.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    transition: 0.5s;
+
+/* BIG SCREENS */
+@media all and (min-width:980px) {
+    .custom_container {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.4);
+        margin-top: -64px !important;
+        padding-top: 64px;
+        
+    }
+    .custom_container .column  {
+        width: 25%;
+        height: 100%;
+        float: left;
+        border-right: 2px solid rgba(0,0,0,0.3);
+        box-shadow: 1px 2px 8px rgba(0,0,0,0.6);
+        box-sizing: border-box;
+        z-index: 1;
+        
+    }
+    .custom_container .column:last-child {
+        border-right: none;
+    }
+    .custom_container .column .content {
+        position: relative;
+        height: 100%;
+    }
+    .custom_container .column .content h1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        background: rgba(0,0,0,0.1);
+        margin: 0;
+        padding: 0;
+        color: rgba(255,255,255,0.3) !important;
+        font-size: 12vw;
+        text-align: center;
+        border-top: 2px solid rgba(0,0,0,0.3);
+        border-bottom: 2px solid rgba(0,0,0,0.3);
+    }
+    .custom_container .column .content  span:first-child {
+        font-size: 0.5em; 
+        display: block;
+    }
+    .custom_container .column .content  span:last-child {
+        font-size: 1em; 
+        display: block;
+    }
+    .custom_container .column .content .box {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        position: absolute;
+        top: 50%;
+        transform: translateY(100%);
+        box-sizing: border-box;
+        padding: 40px;
+        background: var(--whiteColor);
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .custom_container .column.active .content .box {
+        opacity: 1;
+        transform: translateY(-50%);
+    
+    }
+    .custom_container .column .content .box h2 {
+        align-self: center;
+        margin: 0;
+        padding: 0;
+        font-size: 30px;
+        color: #333;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+    
+    }
+    .custom_container .column .content .box > div {
+        align-self: center;
+        color: var(--blackColor);
+        font-size: 18px;
+    }
+    .custom_container .column .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+    .custom_container .column.active .bg.bg1 {
+        background: url(bg_1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        transition: 0.5s;
+    }
+    .custom_container .column.active .bg.bg2 {
+        background: url(bg_2.jpeg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        transition: 0.5s;
+    }
+    .custom_container .column.active .bg.bg3 {
+        background: url(bg_3.jpeg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        transition: 0.5s;
+    }
+    .custom_container .column.active .bg.bg4 {
+        background: url(bg_4.jpeg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        transition: 0.5s;
+    }
 }
-.custom_container .column.active .bg.bg3 {
-    background: url(bg_3.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    transition: 0.5s;
+
+@media all and (max-width: 550px) {
+    .custom_container .column .content .box h2 {
+        font-size: 18px;
+    }
 }
-.custom_container .column.active .bg.bg4 {
-    background: url(bg_4.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    transition: 0.5s;
-}
+
 .card-action {
     background: var(--whiteColor) !important;
 }

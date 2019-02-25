@@ -43,8 +43,7 @@ class Header extends Component {
 
     return (
       <div className="navbar-fixed">
-
-          <nav>
+          <nav> 
               <div className="nav-wrapper container">
                   <Link 
                   to={ this.props.auth ? '/surveys' : '/' } 
@@ -54,9 +53,15 @@ class Header extends Component {
                  <i className="material-icons custom_mail">mail</i>- Census
 
                   </Link>
-                  <ul className="right">
-                      { this.renderContent() }
-                  </ul>
+
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
+
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    {this.renderContent()}
+                </ul>
+                <ul className="sidenav" id="mobile-demo">
+                    {this.renderContent()}
+                </ul>
               </div>
           </nav>
         

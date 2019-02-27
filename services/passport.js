@@ -30,7 +30,12 @@ passport.use( new GoogleStrategy({
  
    async (accessToken, refreshToken, profile, done) => {
 
-      const existingUser =  await User.findOne({ googleId: profile.id })
+      const existingUser =  await User.findOne({
+
+         googleId: profile.id,
+         displayName: profile.displayName 
+      
+      });
 
             if(existingUser) {
 
@@ -38,7 +43,13 @@ passport.use( new GoogleStrategy({
 
             } else {
 
-               const user = await new User({ googleId: profile.id }).save()
+               const user = await new User({ 
+
+                  googleId: profile.id,
+                  displayName: profile.displayName
+
+               }).save();
+
                done(null, user);
             }
          

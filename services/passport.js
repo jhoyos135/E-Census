@@ -25,6 +25,7 @@ passport.use( new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     proxy: true
  }, 
  
@@ -53,4 +54,6 @@ passport.use( new GoogleStrategy({
                done(null, user);
             }
          
- })); //to make a facebook authentication you have change this piece of code only
+ }));
+
+ // To make a facebook authentication you have change this piece of code
